@@ -1,0 +1,10 @@
+project: savantenvs/hobbes
+target: fuzz-parse-expr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-parse-expr/testsuite
+cmds:
+  - cmd: /mayhem/fuzz-parse-expr
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/fuzz/parse-expr.dict
